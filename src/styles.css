@@ -1,0 +1,177 @@
+:root{
+  --bg: linear-gradient(180deg,#0f1724 0%, #183049 60%);
+  --panel: rgba(255,255,255,0.06);
+  --accent: #ff8a00;
+  --btn-bg: rgba(255,255,255,0.08);
+  --btn-active: rgba(255,138,0,0.15);
+  --text: #e6f0ff;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box; margin:0; padding:0; font-family: Inter, system-ui, sans-serif}
+html,body,#root{height:100%}
+
+.app-root{
+  height:100vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: var(--bg);
+  color:var(--text);
+}
+
+/* Tela de entrada */
+.start-screen{
+  width:92%;
+  max-width:480px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:16px;
+  padding:24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  text-align:center;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.title{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.desc{
+  color: #cfe7ff;
+  margin-bottom:18px;
+}
+.enter-btn{
+  background: linear-gradient(90deg, #ff8a00, #ff4d6d);
+  border:none;
+  color:white;
+  padding:12px 18px;
+  font-weight:700;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:16px;
+  box-shadow: 0 6px 18px rgba(255,138,0,0.2);
+}
+
+/* Game container */
+.game-container{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  align-items:stretch;
+  justify-content:stretch;
+}
+
+/* Canvas full */
+#three-canvas{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* UI overlays */
+.overlay-ui{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+/* Left control cluster */
+.controls-left{
+  position:absolute;
+  left:14px;
+  bottom:28px;
+  width:140px;
+  height:140px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:10px;
+  pointer-events:auto;
+}
+.ctrl-btn{
+  background: var(--btn-bg);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  font-weight:700;
+  font-size:14px;
+  padding:10px;
+  user-select:none;
+  touch-action: none;
+  transition:background 0.12s, transform 0.08s;
+}
+.ctrl-btn:active,
+.ctrl-btn.active{
+  background: var(--btn-active);
+  transform: translateY(2px);
+}
+
+/* Jump center button */
+.jump-btn{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:28px;
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  font-weight:800;
+  font-size:14px;
+  pointer-events:auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Chop button at right */
+.chop-btn{
+  position:absolute;
+  right:14px;
+  bottom:28px;
+  width:64px;
+  height:64px;
+  border-radius:12px;
+  background:var(--btn-bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+  font-weight:700;
+  pointer-events:auto;
+}
+
+/* Top HUD */
+.hud-top{
+  position:absolute;
+  left:12px;
+  top:12px;
+  background:var(--glass);
+  padding:8px 12px;
+  border-radius:10px;
+  pointer-events:none;
+  font-size:13px;
+  color: #cfe7ff;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Landscape hint for mobile */
+.rotate-hint{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+  color:white;
+  font-size:18px;
+  text-align:center;
+  padding:20px;
+  z-index:10;
+}
