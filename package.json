@@ -1,0 +1,17 @@
+{
+  "name": "jogo-3d-landscape",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "three": "^0.156.0"
+  },
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --public-url ./"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
